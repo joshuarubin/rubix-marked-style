@@ -1,21 +1,19 @@
-*:not('#mkdbuttons') {
+*:not('#mkdbuttons') {  // TODO(jrubin)
   margin: 0;
   padding: 0;
 }
 
 body {
-  -moz-border-radius: 3px;
-  -webkit-border-radius: 3px;
-  border-radius: 3px;
-  margin: 15px;
-  padding: 30px;
+  -moz-border-radius: 3px;       // TODO(jrubin)
+  -webkit-border-radius: 3px;    // TODO(jrubin)
+  border-radius: 3px;            // TODO(jrubin)
 
   & > *:first-child {
-    margin-top: 0 !important;
+    margin-top: 0 !important;    // TODO(jrubin)
   }
 
   & > *:last-child {
-    margin-bottom: 0 !important;
+    margin-bottom: 0 !important; // TODO(jrubin)
   }
 
   & > h1:first-child,
@@ -40,7 +38,7 @@ h3,
 h4,
 h5,
 h6 {
-  margin: 1em 0 15px;
+  margin: 1em 0 15px;   // TODO(jrubin)
   padding: 0;
   position: relative;
 }
@@ -49,15 +47,15 @@ p,
 blockquote,
 table,
 pre {
-  margin: 15px 0;
+  margin: 15px 0;       // TODO(jrubin)
 }
 
 ul {
-  padding-left: 30px;
+  padding-left: 30px;   // TODO(jrubin)
 }
 
 ol {
-  padding-left: 30px;
+  padding-left: 30px;   // TODO(jrubin)
 
   li ul:first-of-type {
     margin-top: 0;
@@ -66,8 +64,8 @@ ol {
 
 hr {
   border: 0 none;
-  height: 4px;
-  margin: 15px 0;
+  height: 4px;    // TODO(jrubin)
+  margin: 15px 0; // TODO(jrubin)
   padding: 0;
 }
 
@@ -96,7 +94,7 @@ dl {
   padding: 0;
 
   dt {
-    margin: 15px 0 5px;
+    margin: 15px 0 5px;  // TODO(jrubin)
     padding: 0;
 
     &:first-child {
@@ -113,8 +111,8 @@ dl {
   }
 
   dd {
-    margin: 0 0 15px;
-    padding: 0 15px;
+    margin: 0 0 15px; // TODO(jrubin)
+    padding: 0 15px;  // TODO(jrubin)
 
     & > :first-child {
       margin-top: 0;
@@ -128,8 +126,8 @@ dl {
 
 blockquote {
   border-left-style: solid;
-  border-left-width: 5px;
-  padding: 0 15px;
+  border-left-width: 5px; // TODO(jrubin)
+  padding: 0 15px;        // TODO(jrubin)
 
   & > :first-child {
     margin-top: 0;
@@ -148,7 +146,7 @@ table {
   th {
     border-style: solid;
     border-width: 1px;
-    padding: 6px 13px;
+    padding: 6px 13px;  // TODO(jrubin)
   }
 
   tr {
@@ -163,19 +161,19 @@ img {
 
 code,
 tt {
-  border-radius: 3px;
+  border-radius: 3px;  // TODO(jrubin)
   border-style: solid;
   border-width: 1px;
-  margin: 0 2px;
-  padding: 0 5px;
+  margin: 0 2px;       // TODO(jrubin)
+  padding: 0 5px;      // TODO(jrubin)
   white-space: nowrap;
 }
 
 pre {
-  border-radius: 3px;
+  border-radius: 3px;  // TODO(jrubin)
   border-style: solid;
   border-width: 1px;
-  margin: 26px 0;
+  margin: 26px 0;      // TODO(jrubin)
   overflow: auto;
   // padding: 6px 10px;
 
@@ -221,6 +219,10 @@ sub {
   vertical-align: sub;
 }
 
+figure {
+  margin: 0;
+}
+
 @media print {
   img,
   pre,
@@ -240,37 +242,8 @@ sub {
 }
 
 @media screen {
-  body.inverted {
-    box-shadow: none;
+  body {
+    margin: 15px;  // TODO(jrubin)
+    padding: 30px; // TODO(jrubin)
   }
-
-  .inverted {
-    body,
-    hr,
-    p,
-    td,
-    li,
-    h1,
-    h2,
-    h3,
-    h4,
-    h5,
-    h6,
-    th,
-    .math,
-    caption,
-    dd,
-    dt,
-    blockquote {
-      box-shadow: none;
-    }
-
-    hr {
-      border-width: 1px !important;
-    }
-  }
-}
-
-figure {
-  margin: 0;
 }
