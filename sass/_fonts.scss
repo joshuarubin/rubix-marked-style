@@ -1,0 +1,99 @@
+@import 'open-sans';
+@import 'inconsolata';
+@import 'dancing-script';
+
+body {
+  font-family: 'Open Sans';
+  font-size: .9em;
+  -webkit-font-smoothing: antialiased;
+  line-height: 1.7;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  cursor: text;
+  font-weight: 300;
+  line-height: 1.1;
+}
+
+h1 {
+  font-size: 2.7em;
+}
+
+h2 {
+  font-size: 2em;
+}
+
+h3 {
+  font-size: 1.5em;
+}
+
+h4 {
+  font-size: 1.2em;
+}
+
+h5 {
+  font-size: 1em;
+}
+
+h6 {
+  font-size: 1em;
+}
+
+h1,
+h2 {
+  // like underline
+  border-bottom-style: solid;
+  border-bottom-width: 1px;
+}
+
+a {
+  text-decoration: none;
+}
+
+dl dt {
+  font-size: .95em;
+  font-style: italic;
+  font-weight: bold;
+}
+
+table {
+  font: inherit;
+  font-size: 100%;
+
+  th {
+    font-weight: bold;
+  }
+}
+
+code,
+tt {
+  font-family: 'Inconsolata';
+  line-height: 1.2;
+}
+
+pre {
+  font-size: .95em;
+  line-height: 1.4;
+}
+
+.poetry pre {
+  font-family: 'Dancing Script';
+  font-size: 1.3em;
+  line-height: 1.6;
+
+  code {
+    font-family: 'Dancing Script';
+  }
+}
+
+sup,
+sub,
+a.footnote {
+  font-size: 1.4ex;
+  line-height: 1;
+}

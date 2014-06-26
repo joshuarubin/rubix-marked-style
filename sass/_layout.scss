@@ -1,0 +1,274 @@
+*:not('#mkdbuttons') {
+  margin: 0;
+  padding: 0;
+}
+
+#wrapper {
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+  border-radius: 3px;
+  margin: 15px;
+  padding: 30px;
+
+  & > *:first-child {
+    margin-top: 0 !important;
+  }
+
+  & > *:last-child {
+    margin-bottom: 0 !important;
+  }
+
+  & > h1:first-child,
+  & > h1:first-child + h2,
+  & > h2:first-child,
+  & > h3:first-child,
+  & > h4:first-child,
+  & > h5:first-child,
+  & > h6:first-child {
+    margin-top: 0;
+    padding-top: 0;
+  }
+}
+
+p {
+  margin: 1em 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 1em 0 15px;
+  padding: 0;
+  position: relative;
+}
+
+p,
+blockquote,
+table,
+pre {
+  margin: 15px 0;
+}
+
+ul {
+  padding-left: 30px;
+}
+
+ol {
+  padding-left: 30px;
+
+  li ul:first-of-type {
+    margin-top: 0;
+  }
+}
+
+hr {
+  border: 0 none;
+  height: 4px;
+  margin: 15px 0;
+  padding: 0;
+}
+
+a:first-child h1,
+a:first-child h2,
+a:first-child h3,
+a:first-child h4,
+a:first-child h5,
+a:first-child h6 {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+h1 + p,
+h2 + p,
+h3 + p,
+h4 + p,
+h5 + p,
+h6 + p,
+ul li > :first-child,
+ol li > :first-child {
+  margin-top: 0;
+}
+
+dl {
+  padding: 0;
+
+  dt {
+    margin: 15px 0 5px;
+    padding: 0;
+
+    &:first-child {
+      padding: 0;
+    }
+
+    & > :first-child {
+      margin-top: 0;
+    }
+
+    & > :last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  dd {
+    margin: 0 0 15px;
+    padding: 0 15px;
+
+    & > :first-child {
+      margin-top: 0;
+    }
+
+    & > :last-child {
+      margin-bottom: 0;
+    }
+  }
+}
+
+blockquote {
+  border-left-style: solid;
+  border-left-width: 5px;
+  padding: 0 15px;
+
+  & > :first-child {
+    margin-top: 0;
+  }
+
+  & > :last-child {
+    margin-bottom: 0;
+  }
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+
+  td,
+  th {
+    border-style: solid;
+    border-width: 1px;
+    padding: 6px 13px;
+  }
+
+  tr {
+    border-top-style: solid;
+    border-top-width: 1px;
+  }
+}
+
+img {
+  max-width: 100%;
+}
+
+code,
+tt {
+  border-radius: 3px;
+  border-style: solid;
+  border-width: 1px;
+  margin: 0 2px;
+  padding: 0 5px;
+  white-space: nowrap;
+}
+
+pre {
+  border-radius: 3px;
+  border-style: solid;
+  border-width: 1px;
+  margin: 26px 0;
+  overflow: auto;
+  // padding: 6px 10px;
+
+  & > code {
+    border: 0;
+    margin: 0;
+    padding: 0;
+    white-space: pre;
+  }
+
+  code,
+  tt {
+    border: 0;
+  }
+}
+
+.poetry pre {
+  display: block;
+  margin-left: 1em;
+
+  code {
+    -moz-hyphens: auto;
+    -webkit-hyphens: auto;
+    hyphens: auto;
+    // Non standard for webkit
+    white-space: pre-wrap;
+    word-break: break-word;
+  }
+}
+
+sup,
+sub,
+a.footnote {
+  height: 0;
+  position: relative;
+  vertical-align: super;
+}
+
+sub {
+  top: -1px;
+  vertical-align: sub;
+}
+
+@media print {
+  img,
+  pre,
+  blockquote,
+  table,
+  figure {
+    page-break-inside: avoid;
+  }
+
+  #wrapper {
+    border: 0;
+  }
+
+  pre code {
+    overflow: visible;
+  }
+}
+
+@media screen {
+  body.inverted {
+    box-shadow: none;
+  }
+
+  .inverted {
+    #wrapper,
+    hr,
+    p,
+    td,
+    li,
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    th,
+    .math,
+    caption,
+    dd,
+    dt,
+    blockquote {
+      box-shadow: none;
+    }
+
+    hr {
+      border-width: 1px !important;
+    }
+  }
+}
+
+body.dark #wrapper {
+  box-shadow: none !important;
+}

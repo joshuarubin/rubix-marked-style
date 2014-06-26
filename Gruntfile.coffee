@@ -21,7 +21,7 @@ module.exports = (grunt) ->
 
     sass:
       options:
-        #sourceComments: "map"
+        sourceMap: true
         outputStyle: "compressed"
 
       dist:
