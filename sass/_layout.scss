@@ -242,8 +242,8 @@ figure {
 }
 
 @media screen {
-  body {
-    margin: 15px;  // TODO(jrubin)
-    padding: 30px; // TODO(jrubin)
+  body:not(.pdf) {
+    margin: 1em;
+    padding: 2em;
   }
 }
