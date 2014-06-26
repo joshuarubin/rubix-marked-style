@@ -197,9 +197,11 @@ pre {
   margin-left: 1em;
 
   code {
+    display: block;
     -moz-hyphens: auto;
     -webkit-hyphens: auto;
     hyphens: auto;
+    padding: 1em;
     // Non standard for webkit
     white-space: pre-wrap;
     word-break: break-word;
