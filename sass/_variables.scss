@@ -1,3 +1,17 @@
+// Tomorrow Pallete
+$t-background:   #fff;
+$t-current-line: #efefef;
+$t-selection:    #d6d6d6;
+$t-foreground:   #4d4d4c;
+$t-comment:      #8e908c;
+$t-red:          #c82829;
+$t-orange:       #f5871f;
+$t-yellow:       #eab700;
+$t-green:        #718c00;
+$t-aqua:         #3e999f;
+$t-blue:         #4271ae;
+$t-purple:       #8959a8;
+
 // Tomorrow Night Pallette
 $tn-background:   #1d1f21;
 $tn-current-line: #282a2e;
@@ -12,17 +26,34 @@ $tn-aqua:         #8abeb7;
 $tn-blue:         #81a2be;
 $tn-purple:       #b294bb;
 
-$background:       $tn-background;
-$primary:          $tn-foreground;
-$alt-background:   $tn-current-line;
-$strong:           lighten($primary, 20%);
-$strong-highlight: $tn-comment;
-$highlight:        $tn-selection;
-$link:             $tn-yellow;
-$accent0:          $tn-blue;
-$accent1:          $tn-green;
-$accent2:          $tn-aqua;
-$accent3:          $tn-purple;
-$alert:            $tn-red;
-$warning:          $tn-orange;
-$selection:        rgba($tn-selection, .7);
+$background:        $t-background;
+$primary:           $t-foreground;
+$alt-background:    $t-current-line;
+$strong-background: darken($alt-background, 20%);
+$strong:            darken($primary, 20%);
+$strong-highlight:  $t-comment;
+$highlight:         $t-selection;
+$link:              $t-orange;
+$accent0:           $t-blue;
+$accent1:           $t-green;
+$accent2:           $t-aqua;
+$accent3:           $t-purple;
+$alert:             $t-red;
+$warning:           $t-yellow;
+$selection:         rgba($t-selection, .7);
+
+$inv-background:        $tn-background;
+$inv-primary:           $tn-foreground;
+$inv-alt-background:    $tn-current-line;
+$inv-strong-background: lighten($inv-alt-background, 20%);
+$inv-strong:            lighten($inv-primary, 20%);
+$inv-strong-highlight:  $tn-comment;
+$inv-highlight:         $tn-selection;
+$inv-link:              $tn-orange;
+$inv-accent0:           $tn-blue;
+$inv-accent1:           $tn-green;
+$inv-accent2:           $tn-aqua;
+$inv-accent3:           $tn-purple;
+$inv-alert:             $tn-red;
+$inv-warning:           $tn-yellow;
+$inv-selection:         rgba($tn-selection, .7);

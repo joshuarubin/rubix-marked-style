@@ -1,23 +1,23 @@
 // vim-hybrid theme by w0ng (https://github.com/w0ng/vim-hybrid)
 
-pre {
+@mixin hljs-hybrid($bg, $sel, $f, $y, $c, $r, $g, $p, $b, $a, $o) {
   code,
   tt {
     // background color
     &.hljs {
-      background: #1d1f22;
+      background: $bg;
       display: block;
       padding: .5em;
 
       // selection color
       &::selection,
       & span::selection {
-        background: rgba(#373b41, .7);
+        background: $sel;
       }
 
       &::-moz-selection,
       & span::-moz-selection {
-        background: rgba(#373b41, .7);
+        background: $sel;
       }
     }
 
@@ -30,7 +30,7 @@ pre {
     .hljs-class .hljs-params,
     .hljs-function .hljs-params,
     .hljs-at_rule .hljs-preprocessor {
-      color: #c5c8c6;
+      color: $f;
     }
 
     // color: fg_yellow
@@ -43,7 +43,7 @@ pre {
     .hljs-header,
     .hljs-sub,
     .hljs-function {
-      color: #f0c674;
+      color: $y;
     }
 
     // color: fg_comment
@@ -54,7 +54,7 @@ pre {
     .hljs-shebang,
     .hljs-template_comment,
     .hljs-doctype {
-      color: #707880;
+      color: $c;
     }
 
     // color: fg_red
@@ -68,7 +68,7 @@ pre {
     .hljs-hexcolor,
     .hljs-input .hljs-prompt,
     .hljs-char {
-      color: #c66;
+      color: $r;
     }
 
     // color: fg_green
@@ -81,7 +81,7 @@ pre {
     .hljs-at.rule .hljs-keyword,
     .hljs-regexp,
     .hljs-attr_selector {
-      color: #b5bd68;
+      color: $g;
     }
 
     // color: fg_purple
@@ -95,7 +95,7 @@ pre {
     .hljs-variable .hljs-filter,
     .hljs-variable .hljs-filter .hljs-keyword,
     .hljs-template_tag .hljs-filter .hljs-keyword {
-      color: #b294bb;
+      color: $p;
     }
 
     // color: fg_blue
@@ -113,7 +113,7 @@ pre {
     .hljs-method,
     .hljs-list .hljs-title,
     .hljs-tag {
-      color: #81a2be;
+      color: $b;
     }
 
     // color: fg_aqua
@@ -133,7 +133,7 @@ pre {
     .hljs-at_rule,
     .hljs-at_rule .hljs-string,
     .hljs-at_rule .hljs-keyword {
-      color: #8abeb7;
+      color: $a;
     }
 
     // color: fg_orange
@@ -149,7 +149,7 @@ pre {
     .hljs-quoted,
     .hljs-class,
     .hljs-header {
-      color: #de935f;
+      color: $o;
     }
 
     .hljs-emphasis {

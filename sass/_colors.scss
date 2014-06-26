@@ -1,136 +1,98 @@
-body {
-  background-color: $background;
-  color: $primary;
-}
+@import 'colorize';
+@import 'hljs-hybrid';
 
-a {
-  color: $link;
-}
+@media screen {
+  body {
+    &.normal {
+      @include colorize($background,
+                        $alt-background,
+                        $strong-background,
+                        $primary,
+                        $link,
+                        $strong,
+                        $highlight,
+                        $strong-highlight,
+                        $alert,
+                        $accent0,
+                        $accent1,
+                        $accent2,
+                        $accent3);
 
-h1 {
-  border-color: $strong-highlight;
-}
-
-h2 {
-  border-color: $highlight;
-}
-
-h3 {
-  color: $accent0;
-}
-
-h4 {
-  color: $accent1;
-}
-
-h5 {
-  color: $accent2;
-}
-
-h6 {
-  color: $accent3;
-}
-
-strong {
-  color: $strong;
-}
-
-hr {
-  color: $highlight;
-}
-
-blockquote {
-  border-color: $highlight;
-  color: $strong-highlight;
-}
-
-table {
-  th,
-  td,
-  tr {
-    border-color: $highlight;
-  }
-
-  $row-even: $alt-background;
-  $row-odd:  $background;
-
-  thead tr {
-    background-color: lighten($row-even, 20%);
-  }
-
-  tbody tr {
-    background-color: $row-odd;
-
-    &:nth-child(even) {
-      background-color: $row-even;
+      pre {
+        @include hljs-hybrid($background,
+                             $selection,
+                             $primary,
+                             $warning,
+                             $strong-highlight,
+                             $alert,
+                             $accent1,
+                             $accent3,
+                             $accent0,
+                             $accent2,
+                             $link);
+      }
     }
-  }
-}
 
-code,
-tt {
-  background-color: $alt-background;
-  border-color: $highlight;
-  color: $strong-highlight;
-}
+    &.inverted {
+      @include colorize($inv-background,
+                        $inv-alt-background,
+                        $inv-strong-background,
+                        $inv-primary,
+                        $inv-link,
+                        $inv-strong,
+                        $inv-highlight,
+                        $inv-strong-highlight,
+                        $inv-alert,
+                        $inv-accent0,
+                        $inv-accent1,
+                        $inv-accent2,
+                        $inv-accent3);
 
-pre {
-  background-color: $alt-background;
-  border-color: $highlight;
-
-  & > code {
-    background: transparent;
-  }
-
-  code,
-  tt {
-    background-color: transparent;
+      pre {
+        @include hljs-hybrid($inv-background,
+                             $inv-selection,
+                             $inv-primary,
+                             $inv-warning,
+                             $inv-strong-highlight,
+                             $inv-alert,
+                             $inv-accent1,
+                             $inv-accent3,
+                             $inv-accent0,
+                             $inv-accent2,
+                             $inv-link);
+      }
+    }
   }
 }
 
 @media print {
   body {
-    background: #fff;  // TODO(jrubin)
+    @include colorize(#fff,
+                      $alt-background,
+                      $strong-background,
+                      $primary,
+                      $link,
+                      $strong,
+                      $highlight,
+                      $strong-highlight,
+                      $alert,
+                      $accent0,
+                      $accent1,
+                      $accent2,
+                      $accent3);
+
+    pre {
+      @include hljs-hybrid(#fff,
+                           $selection,
+                           $primary,
+                           $warning,
+                           $strong-highlight,
+                           $alert,
+                           $accent1,
+                           $accent3,
+                           $accent0,
+                           $accent2,
+                           $link);
+    }
   }
 }
-
-// TODO(jrubin) body.inverted
-
-@media screen {
-  ::selection {
-    background: rgba(157, 193, 200, .5);  // TODO(jrubin)
-  }
-
-  h1::selection {
-    background-color: rgba(45, 156, 208, .3);  // TODO(jrubin)
-  }
-
-  h2::selection {
-    background-color: rgba(90, 182, 224, .3);  // TODO(jrubin)
-  }
-
-  h3::selection,
-  h4::selection,
-  h5::selection,
-  h6::selection,
-  li::selection,
-  ol::selection {
-    background-color: rgba(133, 201, 232, .3);  // TODO(jrubin)
-  }
-
-  a::selection {
-    background-color: rgba(255, 230, 102, .2);  // TODO(jrubin)
-  }
-
-  td::selection,
-  th::selection,
-  caption::selection {
-    background-color: rgba(180, 237, 95, .5);  // TODO(jrubin)
-  }
-}
-
-ins#firstdiff::before {
-  color: rgba($alert, .65);
-}
-
-@import 'hljs-hybrid';
