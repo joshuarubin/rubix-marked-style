@@ -117,4 +117,8 @@ pre {
   }
 }
 
+ins#firstdiff::before {
+  color: rgba($alert, .65);
+}
+
 @import 'hljs-hybrid';
