@@ -3,7 +3,7 @@
   padding: 0;
 }
 
-#wrapper {
+body {
   -moz-border-radius: 3px;
   -webkit-border-radius: 3px;
   border-radius: 3px;
@@ -230,7 +230,7 @@ sub {
     page-break-inside: avoid;
   }
 
-  #wrapper {
+  body {
     border: 0;
   }
 
@@ -245,7 +245,7 @@ sub {
   }
 
   .inverted {
-    #wrapper,
+    body,
     hr,
     p,
     td,
