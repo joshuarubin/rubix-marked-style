@@ -1,7 +1,7 @@
 @import 'colorize';
 @import 'hljs-hybrid';
 
-@media screen {
+@media not print {
   body {
     &.normal {
       @include colorize($background,
