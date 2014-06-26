@@ -23,6 +23,14 @@ h4 {
   color: $accent1;
 }
 
+h5 {
+  color: $accent2;
+}
+
+h6 {
+  color: $accent3;
+}
+
 strong {
   color: $strong;
 }
@@ -37,21 +45,25 @@ blockquote {
 }
 
 table {
-  th {
-    border-color: $highlight;
-  }
-
-  td {
-    border-color: $highlight;
-  }
-
+  th,
+  td,
   tr {
-    background-color: $background;
     border-color: $highlight;
   }
 
-  tbody tr:nth-child(odd) {
-    background-color: $alt-background;
+  $row-even: $alt-background;
+  $row-odd:  $background;
+
+  thead tr {
+    background-color: lighten($row-even, 20%);
+  }
+
+  tbody tr {
+    background-color: $row-odd;
+
+    &:nth-child(even) {
+      background-color: $row-even;
+    }
   }
 }
 
