@@ -10,7 +10,8 @@
     .pln { color: $f; }  // plain text
 
     @media screen {
-      .str {  // string content
+      .str,   // string content
+      .atv {  // a markup attribute value
         color: $g;
       }
 
@@ -18,10 +19,12 @@
         color: $p;
       }
 
+      .dec,
       .com {  // a comment
         color: $c;
       }
 
+      .tag,   // a markup tag name
       .fun,   // a function name
       .typ {  // a type name
         color: $b;
@@ -33,20 +36,11 @@
         color: $f;
       }
 
-      .tag {  // a markup tag name
-        color: $y;
-      }
-
       .var {  // a declaration; a variable name
         color: $r;
       }
 
-      .atv {  // a markup attribute value
-        color: $a;
-      }
-
       .atn,   // a markup attribute name
-      .dec,
       .lit {  // a literal value
         color: $o;
       }
