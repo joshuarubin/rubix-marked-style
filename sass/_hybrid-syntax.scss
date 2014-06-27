@@ -1,0 +1,7 @@
+@import 'hljs-hybrid';
+@import 'prettify-hybrid';
+
+@mixin hybrid-syntax($bg, $sel, $f, $y, $c, $r, $g, $p, $b, $a, $o) {
+  @include hljs-hybrid($bg, $sel, $f, $y, $c, $r, $g, $p, $b, $a, $o);
+  @include prettify-hybrid($bg, $sel, $f, $y, $c, $r, $g, $p, $b, $a, $o);
+}

@@ -159,8 +159,7 @@ img {
   max-width: 100%;
 }
 
-code,
-tt {
+code {
   border-radius: 3px;  // TODO(jrubin)
   border-style: solid;
   border-width: 1px;
@@ -184,8 +183,7 @@ pre {
     white-space: pre;
   }
 
-  code,
-  tt {
+  code {
     border: 0;
   }
 }
@@ -241,9 +239,7 @@ figure {
   }
 }
 
-@media screen {
-  body:not(.pdf) {
-    margin: 1em;
-    padding: 2em;
-  }
+body:not(.pdf) {  // .pdf is used by [StackEdit](https://stackedit.io)
+  margin: 1em;
+  padding: 2em;
 }

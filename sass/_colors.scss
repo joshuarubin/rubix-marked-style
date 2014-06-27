@@ -1,5 +1,5 @@
 @import 'colorize';
-@import 'hljs-hybrid';
+@import 'hybrid-syntax';
 
 @media not print {
   body {
@@ -19,17 +19,17 @@
                         $accent3);
 
       pre {
-        @include hljs-hybrid($background,
-                             $selection,
-                             $primary,
-                             $warning,
-                             $strong-highlight,
-                             $alert,
-                             $accent1,
-                             $accent3,
-                             $accent0,
-                             $accent2,
-                             $link);
+        @include hybrid-syntax($background,
+                               $selection,
+                               $primary,
+                               $warning,
+                               $strong-highlight,
+                               $alert,
+                               $accent1,
+                               $accent3,
+                               $accent0,
+                               $accent2,
+                               $link);
       }
     }
 
@@ -49,17 +49,17 @@
                         $inv-accent3);
 
       pre {
-        @include hljs-hybrid($inv-background,
-                             $inv-selection,
-                             $inv-primary,
-                             $inv-warning,
-                             $inv-strong-highlight,
-                             $inv-alert,
-                             $inv-accent1,
-                             $inv-accent3,
-                             $inv-accent0,
-                             $inv-accent2,
-                             $inv-link);
+        @include hybrid-syntax($inv-background,
+                               $inv-selection,
+                               $inv-primary,
+                               $inv-warning,
+                               $inv-strong-highlight,
+                               $inv-alert,
+                               $inv-accent1,
+                               $inv-accent3,
+                               $inv-accent0,
+                               $inv-accent2,
+                               $inv-link);
       }
     }
   }
@@ -82,17 +82,17 @@
                       $accent3);
 
     pre {
-      @include hljs-hybrid(#fff,
-                           $selection,
-                           $primary,
-                           $warning,
-                           $strong-highlight,
-                           $alert,
-                           $accent1,
-                           $accent3,
-                           $accent0,
-                           $accent2,
-                           $link);
+      @include hybrid-syntax(#fff,
+                             $selection,
+                             $primary,
+                             $warning,
+                             $strong-highlight,
+                             $alert,
+                             $accent1,
+                             $accent3,
+                             $accent0,
+                             $accent2,
+                             $link);
     }
   }
 }

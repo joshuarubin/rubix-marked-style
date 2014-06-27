@@ -1,8 +1,7 @@
 // vim-hybrid theme by w0ng (https://github.com/w0ng/vim-hybrid)
 
 @mixin hljs-hybrid($bg, $sel, $f, $y, $c, $r, $g, $p, $b, $a, $o) {
-  code,
-  tt {
+  code {
     // background color
     &.hljs {
       background: $bg;
@@ -33,7 +32,7 @@
       color: $f;
     }
 
-    // color: fg_yellow
+    // color: fg_blue
     .hljs-title,
     .hljs-function .hljs-title,
     .hljs-keyword .hljs-common,
@@ -43,7 +42,7 @@
     .hljs-header,
     .hljs-sub,
     .hljs-function {
-      color: $y;
+      color: $b;
     }
 
     // color: fg_comment
@@ -98,7 +97,7 @@
       color: $p;
     }
 
-    // color: fg_blue
+    // color: fg_yellow
     .hljs-statement,
     .hljs-label,
     .hljs-keyword,
@@ -113,7 +112,7 @@
     .hljs-method,
     .hljs-list .hljs-title,
     .hljs-tag {
-      color: $b;
+      color: $y;
     }
 
     // color: fg_aqua

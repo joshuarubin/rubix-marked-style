@@ -1,0 +1,55 @@
+// prettify is used by [StackEdit](https://stackedit.io)
+
+@mixin prettify-hybrid($bg, $sel, $f, $y, $c, $r, $g, $p, $b, $a, $o) {
+  &.prettyprint code {
+    background: $bg;
+    display: block;
+    padding: .5em;
+
+    // SPAN elements with the classes below are added by prettyprint.
+    .pln { color: $f; }  // plain text
+
+    @media screen {
+      .str {  // string content
+        color: $g;
+      }
+
+      .kwd {  // a keyword
+        color: $p;
+      }
+
+      .com {  // a comment
+        color: $c;
+      }
+
+      .fun,   // a function name
+      .typ {  // a type name
+        color: $b;
+      }
+
+      .pun,   // punctuation
+      .opn,   // open bracket
+      .clo {  // close bracket
+        color: $f;
+      }
+
+      .tag {  // a markup tag name
+        color: $y;
+      }
+
+      .var {  // a declaration; a variable name
+        color: $r;
+      }
+
+      .atv {  // a markup attribute value
+        color: $a;
+      }
+
+      .atn,   // a markup attribute name
+      .dec,
+      .lit {  // a literal value
+        color: $o;
+      }
+    }
+  }
+}

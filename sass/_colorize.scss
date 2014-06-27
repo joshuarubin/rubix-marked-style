@@ -68,8 +68,7 @@
     }
   }
 
-  code,
-  tt {
+  code {
     background-color: $abg;
     border-color: $hl;
     color: $shl;
@@ -83,8 +82,7 @@
       background: transparent;
     }
 
-    code,
-    tt {
+    code {
       background-color: transparent;
     }
   }
