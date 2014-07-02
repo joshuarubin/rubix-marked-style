@@ -1,3 +1,5 @@
+$container-margin: 1rem;
+$container-padding: 2rem;
 $paragraph-margin-bottom: rem-calc(20) !default;
 $border-radius: 3px;
 $hr-border-width: rem-calc(5) !default;
@@ -260,9 +262,18 @@ figure {
   }
 }
 
+.viewport-width {
+  width: 100vw;
+  position: relative;
+  left: -1 * ($container-margin + $container-padding)
+}
+
 body:not(.pdf) {  // .pdf is used by [StackEdit](https://stackedit.io)
-  margin: 1rem;
-  padding: 2rem;
+  .container,
+  #wrapper {
+    margin: $container-margin;
+    padding: $container-padding;
+  }
 }
 
 .footnotes ol p {
