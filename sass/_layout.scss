@@ -245,6 +245,7 @@ sub {
 
 figure {
   margin: 0;
+  figcaption { display: none; }
 }
 
 @media print {
