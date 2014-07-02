@@ -3,9 +3,7 @@ $border-radius: 3px;
 $hr-border-width: rem-calc(5) !default;
 $hr-margin: rem-calc(20) !default;
 $list-margin-bottom: $paragraph-margin-bottom !default;
-$list-style-position: outside !default;
-$list-side-margin: 1.1rem !default;
-$list-nested-margin: rem-calc(20) !default;
+$list-style-position: inside !default;
 $definition-list-header-margin-bottom: .3rem !default;
 $definition-list-margin-bottom: rem-calc(12) !default;
 
@@ -69,17 +67,21 @@ ul,
 dl {
   list-style-position: $list-style-position;
   margin-bottom: $list-margin-bottom;
-  padding-left: 2rem;
+  padding-left: 0;
+
+  & ol,
+  & ul,
+  & dl {
+    padding-left: 2rem;
+  }
 }
 
 ul {
   list-style-type: disc;
-  margin-#{$default-float}: $list-side-margin;
 
   li {
     ul,
     ol {
-      margin-#{$default-float}: $list-nested-margin;
       margin-bottom: 0;
     }
   }
@@ -93,7 +95,6 @@ ol {
 
     ul,
     ol {
-      margin-#{$default-float}: $list-nested-margin;
       margin-bottom: 0;
     }
   }
@@ -116,6 +117,7 @@ dl {
 
   dd {
     margin-bottom: $definition-list-margin-bottom;
+    margin-left: 2rem;
 
     & > :first-child {
       margin-top: 0;

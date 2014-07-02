@@ -1,5 +1,4 @@
 $rem-base: 16px;
-$default-float: left !default;
 
 @function strip-unit($num) {
   @return $num / ($num * 0 + 1);
