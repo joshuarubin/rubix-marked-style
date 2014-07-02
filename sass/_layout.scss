@@ -67,13 +67,7 @@ ul,
 dl {
   list-style-position: $list-style-position;
   margin-bottom: $list-margin-bottom;
-  padding-left: 0;
-
-  & ol,
-  & ul,
-  & dl {
-    padding-left: 2rem;
-  }
+  padding-left: 2rem;
 }
 
 ul {
