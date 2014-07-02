@@ -1,0 +1,15 @@
+.gmap,
+.gmap-container {
+  width: 100%;
+  height: 30rem;
+
+  img {
+    max-width: none;
+    background: none;
+  }
+}
+
+.gmaps {
+  font-size: rem-calc(11);
+  text-align: right;
+}
