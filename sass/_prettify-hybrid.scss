@@ -3,8 +3,10 @@
 @mixin prettify-hybrid($bg, $sel, $f, $y, $c, $r, $g, $p, $b, $a, $o) {
   &.prettyprint code {
     background: $bg;
-    display: block;
-    padding: .5em;
+    box-sizing: border-box;
+    display: inline-block;
+    min-width: 100%;
+    padding: .5rem;
 
     // SPAN elements with the classes below are added by prettyprint.
     .pln { color: $f; }  // plain text

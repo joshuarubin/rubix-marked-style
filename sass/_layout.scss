@@ -1,35 +1,49 @@
+$paragraph-margin-bottom: rem-calc(20) !default;
+$border-radius: 3px;
+$hr-border-width: rem-calc(5) !default;
+$hr-margin: rem-calc(20) !default;
+$list-margin-bottom: $paragraph-margin-bottom !default;
+$list-style-position: outside !default;
+$list-side-margin: 1.1rem !default;
+$list-nested-margin: rem-calc(20) !default;
+$definition-list-header-margin-bottom: .3rem !default;
+$definition-list-margin-bottom: rem-calc(12) !default;
+
 *:not('#mkdbuttons') {  // TODO(jrubin)
   margin: 0;
   padding: 0;
 }
 
-body {
-  -moz-border-radius: 3px;       // TODO(jrubin)
-  -webkit-border-radius: 3px;    // TODO(jrubin)
-  border-radius: 3px;            // TODO(jrubin)
+body,
+#wrapper {
+  -moz-border-radius: $border-radius;
+  -webkit-border-radius: $border-radius;
+  border-radius: $border-radius;
 
   & > *:first-child {
-    margin-top: 0 !important;    // TODO(jrubin)
+    margin-top: 0;
   }
 
   & > *:last-child {
-    margin-bottom: 0 !important; // TODO(jrubin)
+    margin-bottom: 0;
   }
 
   & > h1:first-child,
+  & > ins:first-child + h1,
   & > h1:first-child + h2,
   & > h2:first-child,
+  & > ins:first-child + h2,
   & > h3:first-child,
+  & > ins:first-child + h3,
   & > h4:first-child,
+  & > ins:first-child + h4,
   & > h5:first-child,
-  & > h6:first-child {
+  & > ins:first-child + h5,
+  & > h6:first-child,
+  & > ins:first-child + h6 {
     margin-top: 0;
     padding-top: 0;
   }
-}
-
-p {
-  margin: 1em 0;
 }
 
 h1,
@@ -38,7 +52,7 @@ h3,
 h4,
 h5,
 h6 {
-  margin: 1em 0 .4em;
+  margin: 2rem 0 1rem;
   padding: 0;
   position: relative;
 }
@@ -47,25 +61,77 @@ p,
 blockquote,
 table,
 pre {
-  margin: 15px 0;       // TODO(jrubin)
+  margin: 0 0 $paragraph-margin-bottom;
+}
+
+ol,
+ul,
+dl {
+  list-style-position: $list-style-position;
+  margin-bottom: $list-margin-bottom;
+  padding-left: 2rem;
 }
 
 ul {
-  padding-left: 30px;   // TODO(jrubin)
+  list-style-type: disc;
+  margin-#{$default-float}: $list-side-margin;
+
+  li {
+    ul,
+    ol {
+      margin-#{$default-float}: $list-nested-margin;
+      margin-bottom: 0;
+    }
+  }
 }
 
 ol {
-  padding-left: 30px;   // TODO(jrubin)
+  li {
+    ul:first-of-type {
+      margin-top: 0;
+    }
 
-  li ul:first-of-type {
-    margin-top: 0;
+    ul,
+    ol {
+      margin-#{$default-float}: $list-nested-margin;
+      margin-bottom: 0;
+    }
+  }
+}
+
+dl {
+  padding: 0;
+
+  dt {
+    margin-bottom: $definition-list-header-margin-bottom;
+
+    & > :first-child {
+      margin-top: 0;
+    }
+
+    & > :last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  dd {
+    margin-bottom: $definition-list-margin-bottom;
+
+    & > :first-child {
+      margin-top: 0;
+    }
+
+    & > :last-child {
+      margin-bottom: 0;
+    }
   }
 }
 
 hr {
   border: 0 none;
-  height: 4px;    // TODO(jrubin)
-  margin: 15px 0; // TODO(jrubin)
+  clear: both;
+  height: $hr-border-width;
+  margin: $hr-margin 0 ($hr-margin - rem-calc($hr-border-width));
   padding: 0;
 }
 
@@ -79,55 +145,11 @@ a:first-child h6 {
   padding-top: 0;
 }
 
-h1 + p,
-h2 + p,
-h3 + p,
-h4 + p,
-h5 + p,
-h6 + p,
-ul li > :first-child,
-ol li > :first-child {
-  margin-top: 0;
-}
-
-dl {
-  padding: 0;
-
-  dt {
-    margin: 15px 0 5px;  // TODO(jrubin)
-    padding: 0;
-
-    &:first-child {
-      padding: 0;
-    }
-
-    & > :first-child {
-      margin-top: 0;
-    }
-
-    & > :last-child {
-      margin-bottom: 0;
-    }
-  }
-
-  dd {
-    margin: 0 0 15px; // TODO(jrubin)
-    padding: 0 15px;  // TODO(jrubin)
-
-    & > :first-child {
-      margin-top: 0;
-    }
-
-    & > :last-child {
-      margin-bottom: 0;
-    }
-  }
-}
 
 blockquote {
   border-left-style: solid;
-  border-left-width: 5px; // TODO(jrubin)
-  padding: 0 15px;        // TODO(jrubin)
+  border-left-width: $hr-border-width;
+  padding: 0 1rem;
 
   & > :first-child {
     margin-top: 0;
@@ -146,7 +168,7 @@ table {
   th {
     border-style: solid;
     border-width: 1px;
-    padding: 6px 13px;  // TODO(jrubin)
+    padding: .5rem 1rem;
   }
 
   tr {
@@ -160,21 +182,24 @@ img {
 }
 
 code {
-  border-radius: 3px;  // TODO(jrubin)
+  -moz-border-radius: $border-radius;
+  -webkit-border-radius: $border-radius;
+  border-radius: $border-radius;
   border-style: solid;
   border-width: 1px;
-  margin: 0 2px;       // TODO(jrubin)
-  padding: 0 5px;      // TODO(jrubin)
+  margin: 0 rem-calc(2);
+  padding: 0 rem-calc(5);
   white-space: nowrap;
 }
 
 pre {
-  border-radius: 3px;  // TODO(jrubin)
+  -moz-border-radius: $border-radius;
+  -webkit-border-radius: $border-radius;
+  border-radius: $border-radius;
   border-style: solid;
   border-width: 1px;
-  margin: 26px 0;      // TODO(jrubin)
+  margin: 2rem 0;
   overflow: auto;
-  // padding: 6px 10px;
 
   & > code {
     border: 0;
@@ -190,14 +215,13 @@ pre {
 
 .poetry pre {
   display: block;
-  margin-left: 1em;
 
   code {
     display: block;
     -moz-hyphens: auto;
     -webkit-hyphens: auto;
     hyphens: auto;
-    padding: 1em;
+    padding: 1rem;
     // Non standard for webkit
     white-space: pre-wrap;
     word-break: break-word;
@@ -240,6 +264,10 @@ figure {
 }
 
 body:not(.pdf) {  // .pdf is used by [StackEdit](https://stackedit.io)
-  margin: 1em;
-  padding: 2em;
+  margin: 1rem;
+  padding: 2rem;
+}
+
+.footnotes ol p {
+  margin: 0 0 .25rem;
 }

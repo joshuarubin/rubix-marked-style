@@ -5,8 +5,10 @@
     // background color
     &.hljs {
       background: $bg;
-      display: block;
-      padding: .5em;
+      box-sizing: border-box;
+      display: inline-block;
+      min-width: 100%;
+      padding: .5rem;
 
       // selection color
       &::selection,

@@ -2,11 +2,94 @@
 @import 'inconsolata';
 @import 'dancing-script';
 
+$cursor-default-value: default !default;
+
+$body-font-family: 'Open Sans' !default;
+$body-font-weight: normal !default;
+$body-font-style: normal !default;
+
+$font-weight-normal: normal !default;
+$font-weight-bold: bold !default;
+
+$header-font-family: $body-font-family !default;
+$header-font-weight: 300 !default;
+$header-font-style: $font-weight-normal !default;
+$header-line-height: 1.4 !default;
+$header-text-rendering: optimizeLegibility !default;
+
+$h1-font-size: rem-calc(44) !default;
+$h2-font-size: rem-calc(37) !default;
+$h3-font-size: rem-calc(27) !default;
+$h4-font-size: rem-calc(23) !default;
+$h5-font-size: rem-calc(18) !default;
+$h6-font-size: 1rem !default;
+
+$small-font-size: 60% !default;
+
+$paragraph-font-family: inherit !default;
+$paragraph-font-weight: $font-weight-normal !default;
+$paragraph-font-size: 1rem !default;
+$paragraph-line-height: 1.6 !default;
+$paragraph-text-rendering: optimizeLegibility !default;
+
+$code-font-family: 'Inconsolata' !default;
+$code-font-weight: $font-weight-normal !default;
+$code-line-height: 1.3 !default;
+$code-font-size: rem-calc(15) !default;
+
+$anchor-text-decoration: none !default;
+$anchor-text-decoration-hover: none !default;
+
+$list-font-family: $paragraph-font-family !default;
+$list-font-size: $paragraph-font-size !default;
+$list-line-height: $paragraph-line-height !default;
+
+$definition-list-header-weight: $font-weight-bold !default;
+
+$table-header-font-size: rem-calc(18) !default;
+$table-header-font-weight: $font-weight-normal;
+$table-header-text-transform: uppercase !default;
+
+$poetry-font-family: 'Dancing Script' !default;
+$poetry-font-size: rem-calc(23) !default;
+$poetry-line-height: 1.4 !default;
+
+$footnote-font-size: 1.4ex !default;
+
+// The typical default browser font-size is 16px
+// A percentage is therefore a percentage of that default
+html {
+  font-size: $base-font-size;  // root size for rem based sizing
+}
+
 body {
-  font-family: 'Open Sans';
-  font-size: .9em;
+  cursor: $cursor-default-value;
+  font-family: $body-font-family;
   -webkit-font-smoothing: antialiased;
-  line-height: 1.7;
+  font-style: $body-font-style;
+  font-weight: $body-font-weight;
+  line-height: 1;
+}
+
+
+a {
+  line-height: inherit;
+  text-decoration: $anchor-text-decoration;
+
+  &:hover,
+  &:focus {
+    @if $anchor-text-decoration-hover != $anchor-text-decoration {
+      text-decoration: $anchor-text-decoration-hover;
+    }
+  }
+}
+
+p {
+  font-family: $paragraph-font-family;
+  font-size: $paragraph-font-size;
+  font-weight: $paragraph-font-weight;
+  line-height: $paragraph-line-height;
+  text-rendering: $paragraph-text-rendering;
 }
 
 h1,
@@ -15,33 +98,90 @@ h3,
 h4,
 h5,
 h6 {
-  cursor: text;
-  font-weight: 300;
-  line-height: 1.1;
+  font-family: $header-font-family;
+  font-style: $header-font-style;
+  font-weight: $header-font-weight;
+  line-height: $header-line-height;
+  text-rendering: $header-text-rendering;
+
+  small {
+    font-size: $small-font-size;
+    line-height: 0;
+  }
 }
 
-h1 {
-  font-size: 2.7em;
+h1 { font-size: $h1-font-size; }
+h2 { font-size: $h2-font-size; }
+h3 { font-size: $h3-font-size; }
+h4 { font-size: $h4-font-size; }
+h5 { font-size: $h5-font-size; }
+h6 { font-size: $h6-font-size; }
+
+em,
+i {
+  font-style: italic;
+  line-height: inherit;
 }
 
-h2 {
-  font-size: 2em;
+strong,
+b {
+  font-weight: $font-weight-bold;
+  line-height: inherit;
 }
 
-h3 {
-  font-size: 1.5em;
+small {
+  font-size: $small-font-size;
+  line-height: inherit;
 }
 
-h4 {
-  font-size: 1.2em;
+code {
+  font-family: $code-font-family;
+  font-weight: $code-font-weight;
+  line-height: $code-line-height;
 }
 
-h5 {
-  font-size: 1em;
+ul,
+ol,
+dl {
+  font-family: $list-font-family;
+  font-size: $list-font-size;
+  line-height: $list-line-height;
 }
 
-h6 {
-  font-size: 1em;
+dl dt {
+  font-weight: $definition-list-header-weight;
+}
+
+blockquote,
+blockquote p {
+  line-height: $paragraph-line-height;
+}
+
+th {
+  font-size: $table-header-font-size;
+  font-weight: $table-header-font-weight;
+  text-transform: $table-header-text-transform;
+}
+
+pre {
+  font-size: $code-font-size;
+}
+
+.poetry pre {
+  font-family: $poetry-font-family;
+  font-size: $poetry-font-size;
+
+  code {
+    font-family: $poetry-font-family;
+    line-height: $poetry-line-height;
+  }
+}
+
+sup,
+sub,
+a.footnote {
+  font-size: $footnote-font-size;
+  line-height: 1;
 }
 
 h1,
@@ -51,50 +191,12 @@ h2 {
   border-bottom-width: 1px;
 }
 
-a {
-  text-decoration: none;
-}
-
-dl dt {
-  font-size: .95em;
-  font-style: italic;
-  font-weight: bold;
-}
-
-table {
-  font: inherit;
-  font-size: 100%;
-
-  th {
-    font-size: 1.1em;
-    font-weight: normal;
-    text-transform: uppercase;
+@media print {
+  a,
+  a:visited {
+    text-decoration: underline;
   }
-}
 
-code {
-  font-family: 'Inconsolata';
-  line-height: 1.2;
-}
-
-pre {
-  font-size: .95em;
-  line-height: 1.4;
-}
-
-.poetry pre {
-  font-family: 'Dancing Script';
-  font-size: 1.4em;
-
-  code {
-    font-family: 'Dancing Script';
-    line-height: 1.4;
-  }
-}
-
-sup,
-sub,
-a.footnote {
-  font-size: 1.4ex;
-  line-height: 1;
+  a[href]:after { content: ' (' attr(href) ')'; }
+  a[href^='#']:after { content: ''; }
 }
