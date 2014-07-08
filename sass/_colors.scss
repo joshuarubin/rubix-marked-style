@@ -3,7 +3,7 @@
 
 @media not print {
   body {
-    &.normal {
+    &:not(.inverted) {
       @include colorize($background,
                         $alt-background,
                         $strong-background,
